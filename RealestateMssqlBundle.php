@@ -9,25 +9,25 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Realestate\MssqlBundle;
+namespace Improvein\MssqlBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Doctrine\DBAL\Types\Type;
 
-class RealestateMssqlBundle extends Bundle
+class ImproveinMssqlBundle extends Bundle
 {
     public function boot()
     {
         // Register custom data types
         if(!Type::hasType('uniqueidentifier')) {
-            Type::addType('uniqueidentifier', 'Realestate\MssqlBundle\Types\UniqueidentifierType');
+            Type::addType('uniqueidentifier', 'Improvein\MssqlBundle\Types\UniqueidentifierType');
         }
         
         if(!Type::hasType('geography')) {
-            Type::addType('geography', 'Realestate\MssqlBundle\Types\PointType');
+            Type::addType('geography', 'Improvein\MssqlBundle\Types\PointType');
         }
 
-        Type::overrideType('date', 'Realestate\MssqlBundle\Types\DateType');        
-        Type::overrideType('datetime', 'Realestate\MssqlBundle\Types\DateTimeType');
+        Type::overrideType('date', 'Improvein\MssqlBundle\Types\DateType');        
+        Type::overrideType('datetime', 'Improvein\MssqlBundle\Types\DateTimeType');
     }
 }

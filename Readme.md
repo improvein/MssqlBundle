@@ -2,11 +2,11 @@ Installation
 -------
 
 ### Step 1. Install MssqlBundle
-Add the **realestate/mssql-bundle** into **composer.json**
+Add the **improvein/mssql-bundle** into **composer.json**
 
     "require": {
         ....
-        "realestateconz/mssql-bundle": "master-dev"
+        "improvein/mssql-bundle": "master-dev"
     },
 
 And run
@@ -22,7 +22,7 @@ doctrine:
         default_connection:     default
         connections:
             default:
-                driver_class:   Realestate\MssqlBundle\Driver\PDODblib\Driver
+                driver_class:   Improvein\MssqlBundle\Driver\PDODblib\Driver
                 host:           %database_host%
                 dbname:         %database_prefix%%database_name%
                 user:           %database_user%
@@ -40,7 +40,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Realestate\MssqlBundle\RealestateMssqlBundle(),
+        new Improvein\MssqlBundle\ImproveinMssqlBundle(),
     );
 }
 ```
