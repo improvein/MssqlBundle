@@ -27,7 +27,10 @@ class ImproveinMssqlBundle extends Bundle
             Type::addType('geography', 'Improvein\MssqlBundle\Types\PointType');
         }
 
-        Type::overrideType('date', 'Improvein\MssqlBundle\Types\DateType');        
-        Type::overrideType('datetime', 'Improvein\MssqlBundle\Types\DateTimeType');
+        Type::overrideType(Type::DATE, 'Improvein\MssqlBundle\Types\DateType');        
+        Type::overrideType(Type::DATETIME, 'Improvein\MssqlBundle\Types\DateTimeType');
+        
+        Type::overrideType(Type::TEXT, 'Improvein\MssqlBundle\Types\TextType');
+        Type::overrideType(Type::STRING, 'Improvein\MssqlBundle\Types\StringType');
     }
 }
